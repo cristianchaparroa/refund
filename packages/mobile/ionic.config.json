@@ -1,0 +1,7 @@
+{
+  "name": "regenfund",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

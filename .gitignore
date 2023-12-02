@@ -1,5 +1,8 @@
+*.DS_Store
+
 packages/hardhat/node_modules
 packages/hardhat/.env
 
 
 packages/mobile/node_modules
+
