@@ -5,4 +5,5 @@ packages/hardhat/.env
 
 
 packages/mobile/node_modules
-
+packages/mobile/.vercel
+packages/mobile/dist
