@@ -1,6 +1,8 @@
 import MessageListItem from '../components/MessageListItem';
+import ProjectListItem from '../components/ProjectListItem';
 import { useState } from 'react';
 import { Message, getMessages } from '../data/messages';
+import { Project, getProjects } from '../data/projects';
 import {
   IonContent,
   IonHeader,
@@ -10,17 +12,22 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonButton
 } from '@ionic/react';
 import './Home.css';
 
 const Home: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useIonViewWillEnter(() => {
     const msgs = getMessages();
     setMessages(msgs);
+
+    const pjts = getProjects();
+    setProjects(pjts);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -28,12 +35,12 @@ const Home: React.FC = () => {
       e.detail.complete();
     }, 3000);
   };
-
+;
   return (
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>Projects</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -44,13 +51,18 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">
-              Inbox
+              Projects
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
+        <IonButton routerLink={`/project-form`}>New Project</IonButton>
+        {/* <IonButton expand="block">Block</IonButton> */}
+        {/* */}
+
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}
+          {projects.map(p => <ProjectListItem key={p.id} project={p} />)}
         </IonList>
       </IonContent>
     </IonPage>
