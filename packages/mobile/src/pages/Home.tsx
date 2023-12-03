@@ -17,10 +17,21 @@ import {
 } from '@ionic/react';
 import './Home.css';
 
+
+import ConnectWallet from '../components/ConnectWallet';
+
 const Home: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
+
+   const [isConnected, setIsConnected] = useState<string>();
+  const connectProps = {
+        label:'Connect Wallet', 
+        setIsConnected:setIsConnected ,
+        isConnected: isConnected,
+  }
+
 
   useIonViewWillEnter(() => {
     const msgs = getMessages();
@@ -55,7 +66,8 @@ const Home: React.FC = () => {
             </IonTitle>
           </IonToolbar>
         </IonHeader>
-
+        
+        <ConnectWallet {...connectProps}/>
         <IonButton routerLink={`/project-form`}>New Project</IonButton>
         {/* <IonButton expand="block">Block</IonButton> */}
         {/* */}
