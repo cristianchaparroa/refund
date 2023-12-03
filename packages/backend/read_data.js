@@ -10,5 +10,5 @@ async function readData(cid) {
         })
 }
 
-const response_ = readData('QmPnuvqusqqjyMKafk9ungb14fS9W5L8yVQsxVgUYRiD7Z')
+const response_ = readData('QmaJkDE6qf2aPiTAtNfPU9BmaNowSeKCiUWCApgQCePoP9')
 console.log(response_)
