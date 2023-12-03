@@ -4,6 +4,15 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import ViewMessage from './pages/ViewMessage';
 
+/* Web3Modal - WalletConnect */
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { WagmiConfig } from 'wagmi'
+import { arbitrum, mainnet } from 'viem/chains'
+import {
+  celo,
+  celoAlfajores
+} from "wagmi/chains";
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -22,12 +31,28 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Navbar from './components/Navbar';
 
 setupIonicReact();
 
+const projectId = '7094e47005c270463e66e639f5cfc841'
+
+const metadata = {
+  name: 'Web3Modal',
+  description: 'Web3Modal Example',
+  url: 'https://web3modal.com',
+  icons: ['https://avatars.githubusercontent.com/u/37784886']
+}
+
+const chains = [mainnet, arbitrum, celo, celoAlfajores]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+createWeb3Modal({ wagmiConfig, projectId, chains })
+
 const App: React.FC = () => (
+  <WagmiConfig config={wagmiConfig}>
   <IonApp>
     <IonReactRouter>
+    
       <IonRouterOutlet>
         <Route path="/" exact={true}>
           <Redirect to="/home" />
@@ -39,8 +64,12 @@ const App: React.FC = () => (
            <ViewMessage />
         </Route>
       </IonRouterOutlet>
+
     </IonReactRouter>
+    <Navbar />
+
   </IonApp>
+  </WagmiConfig>
 );
 
 export default App;
