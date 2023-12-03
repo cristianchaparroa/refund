@@ -50,7 +50,10 @@ const config: HardhatUserConfig = {
   },
   mocha: {
     timeout: 40000
-  }
+  },
+  typechain: {
+    outDir: "../mobile/src/typechain-types/",
+  },
 };
 
 export default config;
