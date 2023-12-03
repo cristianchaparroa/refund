@@ -1,6 +1,6 @@
 import MessageListItem from '../components/MessageListItem';
 import ProjectListItem from '../components/ProjectListItem';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Message, getMessages } from '../data/messages';
 import { Project, getProjects } from '../data/projects';
 import {
@@ -22,20 +22,39 @@ import { add } from 'ionicons/icons';
 import './Home.css';
 import { useParams } from 'react-router';
 
+import detectEthereumProvider from '@metamask/detect-provider'
 
-import ConnectWallet from '../components/ConnectWallet';
-
+declare let window:any;
 const Home: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
 
-  const [isConnected, setIsConnected] = useState<string>();
-  const connectProps = {
-        label:'Connect Wallet',
-        setIsConnected:setIsConnected ,
-        isConnected: isConnected,
-  }
+  const [hasProvider, setHasProvider] = useState<boolean | null>(null)
+  const initialState = { accounts: [] }
+  const [wallet, setWallet] = useState(initialState)  /* New */
+
+
+  useEffect(() => {
+    const getProvider = async () => {
+      const provider = await detectEthereumProvider({ silent: false })
+      setHasProvider(Boolean(provider))
+    }
+
+    getProvider()
+  }, [])
+
+  const updateWallet = async (accounts:any) => {     /* New */
+    setWallet({ accounts })                          /* New */
+  }                                                  /* New */
+
+  const handleConnect = async () => {                /* New */
+    let accounts = await window.ethereum.request({   /* New */
+      method: "eth_requestAccounts",                 /* New */
+    })                                               /* New */
+    updateWallet(accounts)                           /* New */
+  }                                                  /* New */
+
 
   const params = useParams<{ rol: string }>();
 
@@ -57,7 +76,18 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Projects {params.rol}</IonTitle>
+          <IonTitle>Projects
+
+    <div className="App">
+      { hasProvider &&                               /* Updated */
+        <button onClick={handleConnect}>Connect MetaMask</button>
+      }
+      
+      { wallet.accounts.length > 0 &&                /* New */
+        <div>Wallet Accounts: { wallet.accounts[0] }</div>
+      }
+    </div>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -73,7 +103,6 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        {/* <ConnectWallet {...connectProps}/> */}
         <IonFab slot="fixed" vertical="bottom" horizontal="end">
           <IonFabButton routerLink={`/project-form`}>
             <IonIcon icon={add}></IonIcon>

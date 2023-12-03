@@ -5,10 +5,17 @@ pragma solidity ^0.8.20;
 // The projects contract is in charge to handle all logic related to Projects
 contract Projects {
 
-    // Stage where the project is currently.
+    // The project have multiples stages that should achieve
     struct Stage {
-        // current progress percentage
-        uint256 percentage;
+        // the following is the deadline to achieve the current stage
+        uint256 deadline;
+
+        // amount of the current stage realeased
+        uint256 amount;
+
+        // TODO:
+        // add the IPFS metadata that the proponet should
+        // attach to this stage for verification
     }
 
     // Project struct contains the information related to the project
@@ -32,9 +39,10 @@ contract Projects {
     }
 
     // The add stage allow to the onwer to the specific project create a new Project stage
-    function addStage(uint256  percentage) public payable {
+    function addStage(uint256  deadline, uint256 amount) public payable {
         Project storage project = projects[msg.sender];
-        project.stages[project.stagesSize].percentage = percentage;
+        project.stages[project.stagesSize].deadline = deadline;
+        project.stages[project.stagesSize].amount = amount;
         project.stagesSize += 1;
     }
 

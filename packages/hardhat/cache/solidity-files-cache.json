@@ -74,8 +74,8 @@
       ]
     },
     "/Users/cristian/projects/refund/packages/hardhat/contracts/Projects.sol": {
-      "lastModificationDate": 1701582659938,
-      "contentHash": "eb9efaed650cb4ba91f2fdbaa6eb61d7",
+      "lastModificationDate": 1701633799656,
+      "contentHash": "9ec43bceadf1c4340fd40daa24ca9aea",
       "sourceName": "contracts/Projects.sol",
       "solcConfig": {
         "version": "0.8.20",
