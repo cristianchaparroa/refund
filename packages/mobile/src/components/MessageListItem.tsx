@@ -16,7 +16,6 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
       <div slot="start" className="dot dot-unread"></div>
       <IonLabel className="ion-text-wrap">
         <h2>
-          {message.fromName}
           <span className="date">
             <IonNote>{message.date}</IonNote>
           </span>
