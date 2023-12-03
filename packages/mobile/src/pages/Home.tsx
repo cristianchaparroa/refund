@@ -13,8 +13,12 @@ import {
   IonTitle,
   IonToolbar,
   useIonViewWillEnter,
-  IonButton
+  IonButton,
+  IonIcon,
+  IonFab,
+  IonFabButton
 } from '@ionic/react';
+import { add } from 'ionicons/icons';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -56,7 +60,12 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        <IonButton routerLink={`/project-form`}>New Project</IonButton>
+        <IonFab slot="fixed" vertical="bottom" horizontal="end">
+          <IonFabButton routerLink={`/project-form`}>
+            <IonIcon icon={add}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+        {/* <IonButton routerLink={`/project-form`}> <IonIcon icon={addCircleOutline}></IonIcon> New Project</IonButton> */}
         {/* <IonButton expand="block">Block</IonButton> */}
         {/* */}
 

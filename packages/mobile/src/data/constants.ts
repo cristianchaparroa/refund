@@ -1,22 +1,22 @@
 const project_status = [
     {
         id: 0, 
-        name: 'Por Aprobar',
+        name: 'Pending for aproval',
         color: 'yellow'
     },
     {
         id: 1, 
-        name: 'Aprobado',
+        name: 'Aproved',
         color: 'dodgerblue'
     },
     {
         id: 2, 
-        name: 'En progreso',
+        name: 'In progress',
         color: 'green'
     },
     {
         id: -1,
-        name: 'Cancelado',
+        name: 'Canceled',
         color: 'red'
     },
 ];

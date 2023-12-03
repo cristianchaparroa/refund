@@ -18,8 +18,7 @@ import ProjectForm from '../components/ProjectForm';
 
 const Home: React.FC = () => {
 
-  useIonViewWillEnter(() => {
-  });
+  useIonViewWillEnter(() => {});
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
