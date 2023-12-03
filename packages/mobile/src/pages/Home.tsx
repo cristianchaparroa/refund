@@ -13,8 +13,12 @@ import {
   IonTitle,
   IonToolbar,
   useIonViewWillEnter,
-  IonButton
+  IonButton,
+  IonIcon,
+  IonFab,
+  IonFabButton
 } from '@ionic/react';
+import { add } from 'ionicons/icons';
 import './Home.css';
 
 
@@ -68,9 +72,11 @@ const Home: React.FC = () => {
         </IonHeader>
         
         <ConnectWallet {...connectProps}/>
-        <IonButton routerLink={`/project-form`}>New Project</IonButton>
-        {/* <IonButton expand="block">Block</IonButton> */}
-        {/* */}
+        <IonFab slot="fixed" vertical="bottom" horizontal="end">
+          <IonFabButton routerLink={`/project-form`}>
+            <IonIcon icon={add}></IonIcon>
+          </IonFabButton>
+        </IonFab>
 
         <IonList>
           {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}
