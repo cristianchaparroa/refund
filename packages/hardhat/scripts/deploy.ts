@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const helloCelo = await ethers.deployContract("HelloCelo");
-  await helloCelo.waitForDeployment();
-  console.log(`HelloCelo deployed to ${helloCelo.target}`);
+  const projects = await ethers.deployContract("Projects");
+  await projects.waitForDeployment();
+  console.log(`Projects contract deployed to ${projects.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
