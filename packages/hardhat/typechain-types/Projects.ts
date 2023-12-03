@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumberish,
   BytesLike,
   FunctionFragment,
   Result,
@@ -20,22 +21,40 @@ import type {
   TypedContractMethod,
 } from "./common";
 
-export interface ProjectsInterface extends Interface {
-  getFunction(nameOrSignature: "createProject" | "projects"): FunctionFragment;
+export declare namespace Projects {
+  export type StageStruct = { percentage: BigNumberish };
 
+  export type StageStructOutput = [percentage: bigint] & { percentage: bigint };
+}
+
+export interface ProjectsInterface extends Interface {
+  getFunction(
+    nameOrSignature: "addStage" | "createProject" | "getStage" | "projects"
+  ): FunctionFragment;
+
+  encodeFunctionData(
+    functionFragment: "addStage",
+    values: [BigNumberish]
+  ): string;
   encodeFunctionData(
     functionFragment: "createProject",
     values: [string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getStage",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "projects",
     values: [AddressLike]
   ): string;
 
+  decodeFunctionResult(functionFragment: "addStage", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "createProject",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "getStage", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "projects", data: BytesLike): Result;
 }
 
@@ -82,11 +101,25 @@ export interface Projects extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  addStage: TypedContractMethod<[percentage: BigNumberish], [void], "payable">;
+
   createProject: TypedContractMethod<[title: string], [void], "payable">;
+
+  getStage: TypedContractMethod<
+    [index: BigNumberish],
+    [Projects.StageStructOutput],
+    "view"
+  >;
 
   projects: TypedContractMethod<
     [arg0: AddressLike],
-    [[string, string] & { title: string; state: string }],
+    [
+      [string, string, bigint] & {
+        title: string;
+        state: string;
+        stagesSize: bigint;
+      }
+    ],
     "view"
   >;
 
@@ -95,13 +128,29 @@ export interface Projects extends BaseContract {
   ): T;
 
   getFunction(
+    nameOrSignature: "addStage"
+  ): TypedContractMethod<[percentage: BigNumberish], [void], "payable">;
+  getFunction(
     nameOrSignature: "createProject"
   ): TypedContractMethod<[title: string], [void], "payable">;
+  getFunction(
+    nameOrSignature: "getStage"
+  ): TypedContractMethod<
+    [index: BigNumberish],
+    [Projects.StageStructOutput],
+    "view"
+  >;
   getFunction(
     nameOrSignature: "projects"
   ): TypedContractMethod<
     [arg0: AddressLike],
-    [[string, string] & { title: string; state: string }],
+    [
+      [string, string, bigint] & {
+        title: string;
+        state: string;
+        stagesSize: bigint;
+      }
+    ],
     "view"
   >;
 
