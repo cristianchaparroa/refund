@@ -1,0 +1,4 @@
+{
+  "did": "did:key:z6MktNSu5q1uLuY7WmEBgQ5HpBTjGGygEAY4sYmndQQTHred",
+  "key": "MgCbEjy65bz5TBTH9Yz3udnRgiWNrMB+ZLP2tpO0BjDo8NO0Bzsf8HOpNBpFzm+WwFJIViduUxWZWORVddbMEtdakPqo="
+}

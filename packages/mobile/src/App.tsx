@@ -24,7 +24,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-
+// require('dotenv').config();
 setupIonicReact();
 
 const App: React.FC = () => (
