@@ -3,3 +3,4 @@
 /* eslint-disable */
 export { HelloCelo__factory } from "./HelloCelo__factory";
 export { Lock__factory } from "./Lock__factory";
+export { Projects__factory } from "./Projects__factory";

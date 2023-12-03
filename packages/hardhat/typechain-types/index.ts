@@ -3,6 +3,8 @@
 /* eslint-disable */
 export type { HelloCelo } from "./HelloCelo";
 export type { Lock } from "./Lock";
+export type { Projects } from "./Projects";
 export * as factories from "./factories";
 export { HelloCelo__factory } from "./factories/HelloCelo__factory";
 export { Lock__factory } from "./factories/Lock__factory";
+export { Projects__factory } from "./factories/Projects__factory";
