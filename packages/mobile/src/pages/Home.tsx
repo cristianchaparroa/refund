@@ -1,6 +1,8 @@
 import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
+import ProjectListItem from '../components/ProjectListItem';
+import { useState, useEffect } from 'react';
 import { Message, getMessages } from '../data/messages';
+import { Project, getProjects } from '../data/projects';
 import {
   IonContent,
   IonHeader,
@@ -10,17 +12,56 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonButton,
+  IonIcon,
+  IonFab,
+  IonFabButton
 } from '@ionic/react';
+import { add } from 'ionicons/icons';
 import './Home.css';
 
+import detectEthereumProvider from '@metamask/detect-provider'
+
+declare let window:any;
 const Home: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+
+    const [hasProvider, setHasProvider] = useState<boolean | null>(null)
+  const initialState = { accounts: [] }
+  const [wallet, setWallet] = useState(initialState)  /* New */
+
+
+  useEffect(() => {
+    const getProvider = async () => {
+      const provider = await detectEthereumProvider({ silent: false })
+      setHasProvider(Boolean(provider))
+    }
+
+    getProvider()
+  }, [])
+
+  const updateWallet = async (accounts:any) => {     /* New */
+    setWallet({ accounts })                          /* New */
+  }                                                  /* New */
+
+  const handleConnect = async () => {                /* New */
+    let accounts = await window.ethereum.request({   /* New */
+      method: "eth_requestAccounts",                 /* New */
+    })                                               /* New */
+    updateWallet(accounts)                           /* New */
+  }                                                  /* New */
+
+
 
   useIonViewWillEnter(() => {
     const msgs = getMessages();
     setMessages(msgs);
+
+    const pjts = getProjects();
+    setProjects(pjts);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -28,12 +69,23 @@ const Home: React.FC = () => {
       e.detail.complete();
     }, 3000);
   };
-
+;
   return (
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>Projects
+
+    <div className="App">
+      { hasProvider &&                               /* Updated */
+        <button onClick={handleConnect}>Connect MetaMask</button>
+      }
+      
+      { wallet.accounts.length > 0 &&                /* New */
+        <div>Wallet Accounts: { wallet.accounts[0] }</div>
+      }
+    </div>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -44,13 +96,23 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">
-              Inbox
+              Projects
             </IonTitle>
           </IonToolbar>
         </IonHeader>
+       
+
+
+
+        <IonFab slot="fixed" vertical="bottom" horizontal="end">
+          <IonFabButton routerLink={`/project-form`}>
+            <IonIcon icon={add}></IonIcon>
+          </IonFabButton>
+        </IonFab>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}
+          {projects.map(p => <ProjectListItem key={p.id} project={p} />)}
         </IonList>
       </IonContent>
     </IonPage>

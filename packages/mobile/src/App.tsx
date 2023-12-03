@@ -3,6 +3,8 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import ViewMessage from './pages/ViewMessage';
+import ViewProject from './pages/ViewProject';
+import ViewNewProject from './pages/ViewNewProject'
 
 /* Web3Modal - WalletConnect */
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
@@ -62,6 +64,12 @@ const App: React.FC = () => (
         </Route>
         <Route path="/message/:id">
            <ViewMessage />
+        </Route>
+        <Route path="/project/:id">
+           <ViewProject />
+        </Route>
+        <Route path="/project-form">
+           <ViewNewProject />
         </Route>
       </IonRouterOutlet>
 
