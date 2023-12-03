@@ -21,7 +21,7 @@ const ProjectListItem: React.FC<ProjectListItemProps> = ({ project }) => {
     <IonCard routerLink={`/project/${project.id}`} style={{ padding: '10px' }}>
       <img alt="Silhouette of mountains" src={`https://source.unsplash.com/random/10×5/?${project.Country}`} style={{ padding: '20px' }}/>
       <IonCardHeader>
-        <IonCardTitle>{project.ProjectName}</IonCardTitle>
+        <IonCardTitle>{project.Country}, {project.ProjectName}</IonCardTitle>
         <IonCardSubtitle style={{ color: getStatusColor(project.status) }}>{getStatus(project.status)}</IonCardSubtitle>
       </IonCardHeader>
 

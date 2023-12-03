@@ -50,7 +50,7 @@ const projects: Project[] = [
     ProjectCategory: ["Climatic Change"],
     FundingGoals: "To secure $2 million in funding for the first phase of the project.",
     FullDescription: "The project aims to establish a paradigm shift in finance by integrating regenerative practices. It seeks to harness the power of finance to not only generate profits but also drive positive environmental and social change. The comprehensive plan involves collaborations with various stakeholders to create a sustainable financial ecosystem.",
-    status: 2,
+    status: 1,
     id: 0
   },
   {
@@ -80,12 +80,12 @@ const projects: Project[] = [
     ProjectCategory: ["Cultural heritage reserve"],
     FundingGoals: "To raise $750,000 for site restoration and educational programs.",
     FullDescription: "Heritage Guardians is committed to preserving cultural heritage...",
-    status: 0,
+    status: 2,
     id: 1
   },
   {
     ProjectName: "Biodiversity Conservation Initiative",
-    Country: "Brazil",
+    Country: "Colombia",
     OrganizationName: "Amazon Preservation Society",
     Team: {
       TeamName: "BioGuardians",
@@ -110,12 +110,12 @@ const projects: Project[] = [
     ProjectCategory: ["Biodiversity"],
     FundingGoals: "To secure R$1,500,000 for conservation efforts.",
     FullDescription: "The Amazon Preservation Society aims to safeguard the biodiversity...",
-    status: 0,
+    status: -1,
     id: 2
   },
   {
     ProjectName: "Climate Change Awareness Campaign",
-    Country: "Canada",
+    Country: "Brazil",
     OrganizationName: "Climate Visionaries",
     Team: {
       TeamName: "Climate Warriors",
