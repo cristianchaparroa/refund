@@ -5,7 +5,7 @@ import {
   } from '@ionic/react';
 import { Project } from '../data/projects';
 import './ProjectListItem.css';
-import { getStatus } from '../data/constantes';
+import { getStatus, getStatusColor } from '../data/constants';
 
 interface ProjectListItemProps {
   project: Project;
@@ -19,7 +19,7 @@ const ProjectListItem: React.FC<ProjectListItemProps> = ({ project }) => {
         <h2>
           {project.title}
           <span className="date">
-            <IonNote>{getStatus(project.status)}</IonNote>
+            <IonNote style={{ color: getStatusColor(project.status) }}>{getStatus(project.status)}</IonNote>
           </span>
         </h2>
         {/* <h3>{project.subject}</h3> */}

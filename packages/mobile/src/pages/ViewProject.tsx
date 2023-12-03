@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Message, getMessage } from '../data/messages';
 import { Project, getProject } from '../data/projects';
+import { getStatus, getStatusColor } from '../data/constants';
 import {
   IonBackButton,
   IonButtons,
@@ -44,19 +45,19 @@ function ViewProject() {
               <IonIcon aria-hidden="true" icon={personCircle} color="primary"></IonIcon>
               <IonLabel className="ion-text-wrap">
                 <h2>
-                  {project.fromName}
+                  {project.title}
                   <span className="date">
-                    <IonNote>{project.date}</IonNote>
+                    <IonNote style={{ color: getStatusColor(project.status) }}>{getStatus(project.status)}</IonNote>
                   </span>
                 </h2>
-                <h3>
+                {/* <h3>
                   To: <IonNote>Me</IonNote>
-                </h3>
+                </h3> */}
               </IonLabel>
             </IonItem>
 
             <div className="ion-padding">
-              <h1>{project.subject}</h1>
+              {/* <h1>{project.subject}</h1> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
