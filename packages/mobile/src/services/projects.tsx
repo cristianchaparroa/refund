@@ -16,6 +16,7 @@ class ProjectsService {
         const createProjectTx =  await contract.createProject(title);
         createProjectTx.wait();
         console.log("--> creating  project has been deployect with:", createProjectTx);
+        return createProjectTx;
     }
 
 }
