@@ -47,7 +47,7 @@ const ProjectForm: React.FC = () => {
     const signer = await walletService.getSigner();
     console.log(signer);
 
-    await projectsService.createProject(signer);
+    await projectsService.createProject(signer, projectName);
   };
 
   return (
