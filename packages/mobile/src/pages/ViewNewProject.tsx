@@ -22,6 +22,7 @@ const Home: React.FC = () => {
   });
 
   const refresh = (e: CustomEvent) => {
+    console.log("--->Refresh");
     setTimeout(() => {
       e.detail.complete();
     }, 3000);

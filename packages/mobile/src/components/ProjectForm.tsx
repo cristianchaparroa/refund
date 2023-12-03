@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonButton, IonLabel, IonDatetime, IonTextarea } from '@ionic/react';
+import  WalletService  from '../services/wallet';
+import ProjectsService from '../services/projects';
 
 const ProjectForm: React.FC = () => {
   const [projectName, setProjectName] = useState('');
@@ -17,8 +19,13 @@ const ProjectForm: React.FC = () => {
   const [fullDescription, setFullDescription] = useState('');
   const [status, setStatus] = useState(0);
 
-  const handleSubmit = (event: any) => {
+  const walletService = new WalletService();
+  const projectsService = new ProjectsService();
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+
+
     const formData = {
       ProjectName: projectName,
       Country: country,
@@ -39,6 +46,10 @@ const ProjectForm: React.FC = () => {
       id: 0
     };
     console.log(formData);
+    const signer = await walletService.getSigner();
+    console.log(signer);
+
+    await projectsService.createProject(signer);
   };
 
   return (
