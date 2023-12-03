@@ -22,9 +22,12 @@ import type {
 } from "./common";
 
 export declare namespace Projects {
-  export type StageStruct = { percentage: BigNumberish };
+  export type StageStruct = { deadline: BigNumberish; amount: BigNumberish };
 
-  export type StageStructOutput = [percentage: bigint] & { percentage: bigint };
+  export type StageStructOutput = [deadline: bigint, amount: bigint] & {
+    deadline: bigint;
+    amount: bigint;
+  };
 }
 
 export interface ProjectsInterface extends Interface {
@@ -34,7 +37,7 @@ export interface ProjectsInterface extends Interface {
 
   encodeFunctionData(
     functionFragment: "addStage",
-    values: [BigNumberish]
+    values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "createProject",
@@ -101,7 +104,11 @@ export interface Projects extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  addStage: TypedContractMethod<[percentage: BigNumberish], [void], "payable">;
+  addStage: TypedContractMethod<
+    [deadline: BigNumberish, amount: BigNumberish],
+    [void],
+    "payable"
+  >;
 
   createProject: TypedContractMethod<[title: string], [void], "payable">;
 
@@ -129,7 +136,11 @@ export interface Projects extends BaseContract {
 
   getFunction(
     nameOrSignature: "addStage"
-  ): TypedContractMethod<[percentage: BigNumberish], [void], "payable">;
+  ): TypedContractMethod<
+    [deadline: BigNumberish, amount: BigNumberish],
+    [void],
+    "payable"
+  >;
   getFunction(
     nameOrSignature: "createProject"
   ): TypedContractMethod<[title: string], [void], "payable">;
