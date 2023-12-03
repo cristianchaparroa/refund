@@ -20,6 +20,7 @@ import {
 } from '@ionic/react';
 import { add } from 'ionicons/icons';
 import './Home.css';
+import { useParams } from 'react-router';
 
 import detectEthereumProvider from '@metamask/detect-provider'
 
@@ -54,7 +55,7 @@ const Home: React.FC = () => {
     updateWallet(accounts)                           /* New */
   }                                                  /* New */
 
-
+  const params = useParams<{ rol: string }>();
 
   useIonViewWillEnter(() => {
     const msgs = getMessages();
@@ -74,8 +75,7 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Projects
-
+          <IonTitle>Projects {params.rol}
     <div className="App">
       { hasProvider &&                               /* Updated */
         <button onClick={handleConnect}>Connect MetaMask</button>
@@ -101,9 +101,6 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
        
-
-
-
         <IonFab slot="fixed" vertical="bottom" horizontal="end">
           <IonFabButton routerLink={`/project-form`}>
             <IonIcon icon={add}></IonIcon>
@@ -112,7 +109,9 @@ const Home: React.FC = () => {
 
         <IonList>
           {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}
-          {projects.map(p => <ProjectListItem key={p.id} project={p} />)}
+          {/* {params.rol == "proponent"? <> {projects.map(p => <ProjectListItem key={p.id} project={p} />) }</> : null }
+          {params.rol == "inversionist"? <> {projects.map(p => <ProjectListItem key={p.id} project={p} />) }</> : null*/ }
+          {params.rol == "validator"? <> {messages.map(m => <MessageListItem key={m.id} message={m} />) }</> : projects.map(p => <ProjectListItem key={p.id} project={p} />)}
         </IonList>
       </IonContent>
     </IonPage>
