@@ -44,7 +44,6 @@ function ViewMessage() {
               <IonIcon aria-hidden="true" icon={personCircle} color="primary"></IonIcon>
               <IonLabel className="ion-text-wrap">
                 <h2>
-                  {message.fromName}
                   <span className="date">
                     <IonNote>{message.date}</IonNote>
                   </span>
