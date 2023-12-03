@@ -138,25 +138,5 @@
       "ProjectCategory": ["Agriculture"],
       "FundingGoals": "To secure ₹2,000,000 for farmer education and infrastructure.",
       "FullDescription": "GreenFields Initiative aims to revolutionize agriculture..."
-    },
-    {
-      "ProjectName": "Community Solar Energy Project",
-      "Country": "Australia",
-      "OrganizationName": "Solar Harmony",
-      "Team": {
-        "TeamName": "Sunshine Team",
-        "Integrants": [
-          {
-            "name": "Liam Jackson",
-            "wallet": "0x1aBcDeF...",
-            "aboutMe": "Passionate about community-driven solar solutions."
-          },
-          {
-            "name": "Isabella Nguyen",
-            "wallet": "0x3xYzAbC...",
-            "aboutMe": "Experienced in community solar projects."
-          }
-        ]
-        }
     }
 ]
