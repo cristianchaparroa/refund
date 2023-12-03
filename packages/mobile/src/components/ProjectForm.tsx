@@ -9,7 +9,6 @@ const ProjectForm: React.FC = () => {
   const [organizationName, setOrganizationName] = useState('');
   const [teamName, setTeamName] = useState('');
   const [integrants, setIntegrants] = useState([]);
-  const [projectStartDate, setProjectStartDate] = useState('');
   const [overview, setOverview] = useState('');
   const [impactPlan, setImpactPlan] = useState('');
   const [profitPlan, setProfitPlan] = useState('');
@@ -34,7 +33,6 @@ const ProjectForm: React.FC = () => {
         TeamName: teamName,
         Integrants: integrants
       },
-      ProjectStartDate: projectStartDate,
       Overview: overview,
       ImpactPlan: impactPlan,
       ProfitPlan: profitPlan,
@@ -72,7 +70,6 @@ const ProjectForm: React.FC = () => {
           <IonInput value={teamName} onIonChange={e => setTeamName(e.detail.value!)}></IonInput>
           {/* You would need to create a separate form or modal for adding team members */}
           <IonLabel>Project Start Date:</IonLabel>
-          <IonDatetime value={projectStartDate} onIonChange={e => setProjectStartDate(e.detail.value!.toString())}></IonDatetime>
           <IonLabel>Overview:</IonLabel>
           <IonTextarea value={overview} onIonChange={e => setOverview(e.detail.value!)}></IonTextarea>
           <IonLabel>Impact Plan:</IonLabel>
