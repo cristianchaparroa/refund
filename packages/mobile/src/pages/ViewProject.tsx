@@ -16,37 +16,37 @@ import {
 } from '@ionic/react';
 import { personCircle } from 'ionicons/icons';
 import { useParams } from 'react-router';
-import './ViewMessage.css';
+import './ViewProject.css';
 
-function ViewMessage() {
-  const [message, setMessage] = useState<Message>();
+function ViewProject() {
+  const [project, setProject] = useState<Project>();
   const params = useParams<{ id: string }>();
 
   useIonViewWillEnter(() => {
-    const msg = getMessage(parseInt(params.id, 10));
-    setMessage(msg);
+    const pjt = getProject(parseInt(params.id, 10));
+    setProject(pjt);
   });
 
   return (
-    <IonPage id="view-message-page">
+    <IonPage id="view-project-page">
       <IonHeader translucent>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton text="Inbox" defaultHref="/home"></IonBackButton>
+            <IonBackButton text="Projects" defaultHref="/home"></IonBackButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
-        {message ? (
+        {project ? (
           <>
             <IonItem>
               <IonIcon aria-hidden="true" icon={personCircle} color="primary"></IonIcon>
               <IonLabel className="ion-text-wrap">
                 <h2>
-                  {message.fromName}
+                  {project.fromName}
                   <span className="date">
-                    <IonNote>{message.date}</IonNote>
+                    <IonNote>{project.date}</IonNote>
                   </span>
                 </h2>
                 <h3>
@@ -56,7 +56,7 @@ function ViewMessage() {
             </IonItem>
 
             <div className="ion-padding">
-              <h1>{message.subject}</h1>
+              <h1>{project.subject}</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -69,11 +69,11 @@ function ViewMessage() {
             </div>
           </>
         ) : (
-          <div>Message not found</div>
+          <div>project not found</div>
         )}
       </IonContent>
     </IonPage>
   );
 }
 
-export default ViewMessage;
+export default ViewProject;
