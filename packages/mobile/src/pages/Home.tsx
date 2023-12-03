@@ -12,7 +12,8 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonButton
 } from '@ionic/react';
 import './Home.css';
 
@@ -54,6 +55,10 @@ const Home: React.FC = () => {
             </IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <IonButton routerLink={`/project-form`}>New Project</IonButton>
+        {/* <IonButton expand="block">Block</IonButton> */}
+        {/* */}
 
         <IonList>
           {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}

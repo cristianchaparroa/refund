@@ -4,6 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import ViewMessage from './pages/ViewMessage';
 import ViewProject from './pages/ViewProject';
+import ViewNewProject from './pages/ViewNewProject'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -41,6 +42,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/project/:id">
            <ViewProject />
+        </Route>
+        <Route path="/project-form">
+           <ViewNewProject />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
