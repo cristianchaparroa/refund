@@ -1,0 +1,162 @@
+[
+    {
+      "ProjectName": "Renewable Energy Expansion",
+      "Country": "Germany",
+      "OrganizationName": "EcoPower Solutions",
+      "Team": {
+        "TeamName": "GreenTech Innovators",
+        "Integrants": [
+          {
+            "name": "Sophie Müller",
+            "wallet": "0xAbC123...",
+            "aboutMe": "Passionate about clean energy initiatives."
+          },
+          {
+            "name": "Max Fischer",
+            "wallet": "0xDeF456...",
+            "aboutMe": "Experienced in solar energy projects."
+          }
+        ]
+      },
+      "ProjectStartDate": "2023-03-10",
+      "Overview": "Our project aims to expand renewable energy...",
+      "ImpactPlan": "The impact plan focuses on reducing carbon emissions...",
+      "ProfitPlan": "Our profit plan involves selling excess energy...",
+      "LogoCID": "QmZxYcAbCd...",
+      "ProjectCategory": ["Renewable Energy"],
+      "FundingGoals": "To secure €1,000,000 for infrastructure expansion.",
+      "FullDescription": "EcoPower Solutions aims to revolutionize the renewable energy sector..."
+    },
+    {
+      "ProjectName": "Cultural Heritage Preservation",
+      "Country": "Italy",
+      "OrganizationName": "Heritage Guardians",
+      "Team": {
+        "TeamName": "Cultural Preservationists",
+        "Integrants": [
+          {
+            "name": "Giuseppe Rossi",
+            "wallet": "0x1aBcDeF...",
+            "aboutMe": "Dedicated to preserving cultural heritage."
+          },
+          {
+            "name": "Maria Bianchi",
+            "wallet": "0x3xYzAbC...",
+            "aboutMe": "Specializes in heritage site restoration."
+          }
+        ]
+      },
+      "ProjectStartDate": "2023-05-22",
+      "Overview": "Our project aims to protect and restore cultural sites...",
+      "ImpactPlan": "The impact plan involves community engagement...",
+      "ProfitPlan": "Sustainable tourism initiatives...",
+      "LogoCID": "QmPqRsTuVw...",
+      "ProjectCategory": ["Cultural heritage reserve"],
+      "FundingGoals": "To raise $750,000 for site restoration and educational programs.",
+      "FullDescription": "Heritage Guardians is committed to preserving cultural heritage..."
+    },
+    {
+      "ProjectName": "Biodiversity Conservation Initiative",
+      "Country": "Brazil",
+      "OrganizationName": "Amazon Preservation Society",
+      "Team": {
+        "TeamName": "BioGuardians",
+        "Integrants": [
+          {
+            "name": "Carlos Silva",
+            "wallet": "0xAbC123...",
+            "aboutMe": "Passionate about rainforest conservation."
+          },
+          {
+            "name": "Ana Costa",
+            "wallet": "0xDeF456...",
+            "aboutMe": "Expert in biodiversity research."
+          }
+        ]
+      },
+      "ProjectStartDate": "2023-07-12",
+      "Overview": "Our project focuses on protecting Amazonian biodiversity...",
+      "ImpactPlan": "Implementing sustainable land use practices...",
+      "ProfitPlan": "Eco-tourism and sustainable products...",
+      "LogoCID": "QmZaBcXyWv...",
+      "ProjectCategory": ["Biodiversity"],
+      "FundingGoals": "To secure R$1,500,000 for conservation efforts.",
+      "FullDescription": "The Amazon Preservation Society aims to safeguard the biodiversity..."
+    },
+    {
+      "ProjectName": "Climate Change Awareness Campaign",
+      "Country": "Canada",
+      "OrganizationName": "Climate Visionaries",
+      "Team": {
+        "TeamName": "Climate Warriors",
+        "Integrants": [
+          {
+            "name": "Olivia Smith",
+            "wallet": "0x1aBcDeF...",
+            "aboutMe": "Advocate for climate action and education."
+          },
+          {
+            "name": "Ethan Johnson",
+            "wallet": "0x3xYzAbC...",
+            "aboutMe": "Specializes in environmental policy."
+          }
+        ]
+      },
+      "ProjectStartDate": "2023-09-05",
+      "Overview": "Our project aims to raise awareness about climate change...",
+      "ImpactPlan": "Educational workshops and community engagement...",
+      "ProfitPlan": "Funding through grants and sponsorships...",
+      "LogoCID": "QmMnOpQrSt...",
+      "ProjectCategory": ["Climatic Change"],
+      "FundingGoals": "To raise $300,000 for awareness campaigns.",
+      "FullDescription": "Climate Visionaries' mission is to create a sustainable future..."
+    },
+    {
+      "ProjectName": "Sustainable Agriculture Development",
+      "Country": "India",
+      "OrganizationName": "GreenFields Initiative",
+      "Team": {
+        "TeamName": "AgriSustain",
+        "Integrants": [
+          {
+            "name": "Raj Patel",
+            "wallet": "0xAbC123...",
+            "aboutMe": "Advocate for sustainable farming."
+          },
+          {
+            "name": "Priya Sharma",
+            "wallet": "0xDeF456...",
+            "aboutMe": "Expert in organic farming techniques."
+          }
+        ]
+      },
+      "ProjectStartDate": "2023-11-18",
+      "Overview": "Our project focuses on promoting sustainable agricultural practices...",
+      "ImpactPlan": "Training farmers in eco-friendly techniques...",
+      "ProfitPlan": "Marketing organic produce...",
+      "LogoCID": "QmYxZaBcDd...",
+      "ProjectCategory": ["Agriculture"],
+      "FundingGoals": "To secure ₹2,000,000 for farmer education and infrastructure.",
+      "FullDescription": "GreenFields Initiative aims to revolutionize agriculture..."
+    },
+    {
+      "ProjectName": "Community Solar Energy Project",
+      "Country": "Australia",
+      "OrganizationName": "Solar Harmony",
+      "Team": {
+        "TeamName": "Sunshine Team",
+        "Integrants": [
+          {
+            "name": "Liam Jackson",
+            "wallet": "0x1aBcDeF...",
+            "aboutMe": "Passionate about community-driven solar solutions."
+          },
+          {
+            "name": "Isabella Nguyen",
+            "wallet": "0x3xYzAbC...",
+            "aboutMe": "Experienced in community solar projects."
+          }
+        ]
+        }
+    }
+]
