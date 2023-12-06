@@ -1,0 +1,8 @@
+.connect-inner {
+  display: table;
+  margin: 0 auto;
+}
+
+.connect-outer {
+  width:100%
+}
