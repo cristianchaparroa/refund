@@ -1,4 +1,5 @@
 *.DS_Store
+.idea/
 
 packages/hardhat/node_modules
 packages/hardhat/.env

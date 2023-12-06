@@ -31,25 +31,31 @@ const App: React.FC = () => (
     <IonMenu contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Choose your role</IonTitle>
+            <IonTitle>
+                Profile
+            </IonTitle>
           </IonToolbar>
         </IonHeader>
+
         <IonContent className="ion-padding">
           <IonMenuToggle>
-            {/* <IonButton>Click to close the menu</IonButton> */}
             <IonButton expand="full" fill='clear' routerLink={`/home/proponent`}>Proponent</IonButton>
             <IonButton expand="full" fill='clear' routerLink={`/home/inversionist`}>Inversionist</IonButton>
             <IonButton expand="full" fill='clear' routerLink={`/home/validator`}>Validator</IonButton>
           </IonMenuToggle>
         </IonContent>
+
       </IonMenu>
+      
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar color="">
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle></IonTitle>
+            <IonTitle>
+                RegenFund
+            </IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">

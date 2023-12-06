@@ -1,0 +1,14 @@
+.connect-inner {
+  display: table;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.connect-outer {
+  width:100%
+}
+
+.connect-button {
+    width: 100% !important;
+}
+
