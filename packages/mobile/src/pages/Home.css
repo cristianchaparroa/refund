@@ -7,3 +7,8 @@
 .connect-outer {
   width:100%
 }
+
+.connect-button {
+    width: 100% !important;
+}
+

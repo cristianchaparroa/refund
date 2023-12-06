@@ -13,9 +13,7 @@ import {
   IonTitle,
   IonToolbar,
   IonIcon,
-  IonFab,
-  IonFabButton,
-  IonFooter
+  IonCardContent,
 } from '@ionic/react';
 import { add } from 'ionicons/icons';
 import './Home.css';
@@ -23,21 +21,25 @@ import { useParams } from 'react-router';
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
+const backgroundImg = "/regen-fund-bg.jpeg";
+
 const Home: React.FC = () => {
 
    return (
     <IonPage id="home-page">
       <IonContent className="ion-padding">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum 
-      </IonContent>
+          <img src={backgroundImg}/>
+          <IonCardContent>
+          Simplificamos la financiación sostenible. Unificamos crowdfunding, créditos sociales y liquid staking en un solo espacio, eliminando la necesidad de saltar entre múltiples plataformas.
+          </IonCardContent>
 
-       <IonFooter>
-        <IonToolbar className="connect-outer">
+          <div className="connect-outer">
             <div className="connect-inner">
-                <ConnectButton/>
+                <ConnectButton />
             </div>
-        </IonToolbar>
-      </IonFooter>
+          </div>
+
+      </IonContent>
     </IonPage>
   );
 };
